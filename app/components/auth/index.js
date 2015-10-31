@@ -24,7 +24,10 @@ function authRoutes (app, express) {
 
 						var token = jwt.sign(payload, secret, options);
 
-						res.json({ token: token });
+						var redis = require('redis'),
+							client = redis.createClient();
+
+						client.set('token', token);
 					}
 				} else {
 					res.json({
