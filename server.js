@@ -8,6 +8,10 @@ var bodyParser = require('body-parser'),
 
 mongoose.connect(config.db);
 
+app.set('view engine', 'jade');
+app.set('views', (__dirname + '/public/views'));
+app.locals.pretty = true;
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/public'));
 
@@ -18,7 +22,11 @@ app.use('/api/auth', authApi(app, express));
 app.use('/api/users', usersApi(app, express));
 
 app.get('/', function (req, res) {
-	res.sendFile(__dirname + '/public/index.html');
+	res.render('index.jade');
+});
+
+app.get('/protected', function (req, res) {
+	res.render('protected.jade');
 });
 
 app.listen(8080);

@@ -1,0 +1,15 @@
+extends base.jade
+
+block content
+	h1 Log in
+	h4
+		form(method="POST")
+			.form-group
+				input(type="text" name="email" id="email" placeholder="email")
+
+			.form-group
+				input(type="password" name="password" id="password" placeholder="password")
+					
+			input.btn.btn-success(type='submit' name='submit' id='submit' value='Submit')
+
+	script(src="js/app.js")

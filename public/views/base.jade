@@ -1,0 +1,17 @@
+doctype html
+head
+	link(rel="stylesheet", href="assets/libs/bootstrap/dist/css/bootstrap.min.css")
+	link(rel="stylesheet", href="assets/libs/toastr/toastr.min.css")
+	link(rel="stylesheet", href="assets/style.css")
+
+body
+	nav.navbar.navbar-default
+		.container-fluid
+			ul.nav.navbar-nav
+				li
+					a(href='/') Redis Example
+	.wrapper
+		block content
+	
+	script(src='assets/libs/jquery/dist/jquery.min.js')
+	script(src="assets/libs/toastr/toastr.js")

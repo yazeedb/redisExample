@@ -14,18 +14,22 @@ function authRoutes (app, express) {
 
 				if (user) {
 					if (!user.comparePassword(req.body.password)) {
-						return res.status(403).send({
+						return res.json({
 							message: 'The email and password you entered don\'t match.'
 						});
 					} else {
 						var payload = {	email: user.email };
 						var secret = require('../../../config.js').secret;
-						var options = { expiresInMinutes: 1440 };
+						var options = { expiresIn: 86400 };
 
 						var token = jwt.sign(payload, secret, options);
 
 						res.json({ token: token });
 					}
+				} else {
+					res.json({
+						message: 'The email and password you entered don\'t match.'
+					})
 				}
 			});
 	});
