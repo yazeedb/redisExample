@@ -28,6 +28,7 @@ function authRoutes (app, express) {
 							client = redis.createClient();
 
 						client.set('token', token);
+						res.json({ token: token });
 					}
 				} else {
 					res.json({

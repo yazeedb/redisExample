@@ -13,6 +13,10 @@ submit.onclick = function (event) {
 			if (res.message) {
 				toastr.info(res.message);
 			}
+
+			if (res.token) {
+				location.reload();
+			}
 		}
 	};
 
