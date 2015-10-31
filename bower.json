@@ -1,0 +1,22 @@
+{
+  "name": "redisProject",
+  "version": "0.0.0",
+  "authors": [
+    "yazman12 <yazman12@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5"
+  }
+}
